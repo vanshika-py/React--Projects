@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Todo = () => {
+const App = () => {
 const [inputValue, setinputValue] = useState("");
+
+const [todos, setTodo] = useState([]);
 
 function handleInput(event){
   setinputValue(event.target.value)
@@ -42,4 +44,4 @@ function handleFormSubmit (event){
     }
   
 
-export default Todo
+export default App
