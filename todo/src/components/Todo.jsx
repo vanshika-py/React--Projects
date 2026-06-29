@@ -2,8 +2,12 @@ import React from 'react'
 
 
 const Todo = () => {
+const [inputValue, setinputValue] = useState("");
+
+
+
   return (
-    
+
          <div className="min-h-screen bg-blue-800 p-5 from-slate-900 via-slate-800 to-black flex flex-col items-center pt-16">
       
       <header className="text-5xl text-white font-bold">
