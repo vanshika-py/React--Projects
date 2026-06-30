@@ -1,24 +1,30 @@
 import React from 'react'
 import { useState } from 'react';
 
-const App = () => {
+const Todo = () => {
 const [inputValue, setinputValue] = useState("");
 
-const [todos, setTodo] = useState([]);
+const [todotask, settodoTask] = useState([]);
 
-function handleInput(event){
+const handleinputChange = (value) => {
   setinputValue(event.target.value)
 }
 
-function handleFormSubmit (event){
+const handleFormSubmit = (event) => {
      event.preventDefault()
 }
+
+
+if(!inputValue) return;
+
+settodoTask((prevtask) => [...prevtask, inputValue]);
+
 
 
   return (
 
          <div className="min-h-screen bg-blue-800 p-5 from-slate-900 via-slate-800 to-black flex flex-col items-center pt-16">
-      
+
       <header className="text-5xl text-white font-bold">
         TO DO LIST✔️
       </header>
@@ -27,9 +33,10 @@ function handleFormSubmit (event){
         <input
           type="text"
           placeholder="Enter your task..."
+          autoComplete='off'
           className="flex-1 px-4 py-3 text-lg outline-none bg-white"
           value = {inputValue}
-          onChange={handleInput}
+          onChange ={(event) => handleinputChange(event.target.value)}
         />
 
         <button
@@ -44,4 +51,4 @@ function handleFormSubmit (event){
     }
   
 
-export default App
+export default Todo
